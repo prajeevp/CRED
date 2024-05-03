@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Website</h1>
+        <p>This is the homepage of our website. Feel free to explore!</p>
+        <a href="{% url 'allDetails' %}">Details</a>
+        <form action="{% url 'logout' %}" method="post" style="text-align: center;">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+
+    </div>
+    
+</body>
+</html>

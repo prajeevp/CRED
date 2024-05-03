@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        /* CSS for table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Students</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Permanent Address</th>
+                <th>Office Address</th>
+                <th>Contact Number</th>
+                <th>PAN</th>
+                <th>Passport</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detail in all_details %}
+            <tr>
+                <td>{{ detail.address }}</td>
+                <td>{{ detail.permanent_address }}</td>
+                <td>{{ detail.office_address }}</td>
+                <td>{{ detail.contact_number }}</td>
+                <td>{{ detail.pan }}</td>
+                <td>{{ detail.passport }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'homePage' %}">Home</a>
+</body>
+</html>
